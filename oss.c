@@ -4,7 +4,6 @@
 //              with a limit on the number running concurrently.
 //              Each user process is invoked with a number of iterations to perform.
 
-
 #include <stdio.h>      // Standard I/O for printf, fprintf
 #include <stdlib.h>     // Standard library for atoi, exit
 #include <unistd.h>     // POSIX API for fork, execl, getopt, sleep
@@ -47,7 +46,6 @@ int main(int argc, char *argv[]) {
         }
     }
 
-   
     int launched = 0;   // Counter for the total number of launched user processes.
     int running = 0;    // Counter for the number of currently running (active) child processes.
     int status;         // Variable to capture exit status from child processes.
@@ -71,8 +69,6 @@ int main(int argc, char *argv[]) {
                 // If execl returns, an error occurred; print error and exit child.
                 perror("execl");
                 exit(EXIT_FAILURE);
-                
-                
             } else {
                 // Parent process:
                 running++;    // Increment the count of running child processes.
