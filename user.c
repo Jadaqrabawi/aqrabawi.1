@@ -10,3 +10,23 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);  // Exit with failure status.
     }
 
+ // Convert the argument (iterations) from a string to an integer.
+ int iterations = atoi(argv[1]);
+
+ // Loop from 1 to the number of iterations (inclusive).
+ for (int i = 1; i <= iterations; i++) {
+     // Print process information before sleeping:
+     // getpid() returns the current process's PID,
+     // getppid() returns the parent's PID.
+     printf("USER PID:%d PPID:%d Iteration:%d before sleeping\n",
+            getpid(), getppid(), i);
+     
+     sleep(1);  // Pause execution for 1 second.
+
+     // Print process information after sleeping.
+     printf("USER PID:%d PPID:%d Iteration:%d after sleeping\n",
+            getpid(), getppid(), i);
+ }
+
+ return 0;  // Return success.
+}
