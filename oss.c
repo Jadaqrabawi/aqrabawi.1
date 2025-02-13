@@ -1,3 +1,10 @@
+// oss.c
+// Author: aqrabwi, 13/02/2025
+// Description: Launches a specified number of user processes (children)
+//              with a limit on the number running concurrently.
+//              Each user process is invoked with a number of iterations to perform.
+
+
 #include <stdio.h>      // Standard I/O for printf, fprintf
 #include <stdlib.h>     // Standard library for atoi, exit
 #include <unistd.h>     // POSIX API for fork, execl, getopt, sleep
