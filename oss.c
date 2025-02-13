@@ -66,3 +66,25 @@ int main(int argc, char *argv[]) {
                 exit(EXIT_FAILURE);
                 
                 
+            } else {
+                // Parent process:
+                running++;    // Increment the count of running child processes.
+                launched++;   // Increment the count of total launched processes.
+            }
+        } else {
+            // If the simultaneous limit has been reached, wait for any child to finish.
+            pid_t finished = wait(&status);
+            if (finished > 0) {
+                running--;  // Decrement the running counter as a child has finished.
+            }
+        }
+    }
+
+    // After launching all children, wait for any remaining child processes to finish.
+    while (running > 0) {
+        wait(&status);
+        running--;
+    }
+
+    return 0; // Exit successfully.
+}
