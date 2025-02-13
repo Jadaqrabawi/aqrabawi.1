@@ -39,3 +39,30 @@ int main(int argc, char *argv[]) {
                 exit(EXIT_FAILURE);
         }
     }
+
+   
+    int launched = 0;   // Counter for the total number of launched user processes.
+    int running = 0;    // Counter for the number of currently running (active) child processes.
+    int status;         // Variable to capture exit status from child processes.
+
+    // Main loop: Continue launching children until the desired total number is reached.
+    while (launched < total_procs) {
+        // Check if we are below the simultaneous process limit.
+        if (running < simul_limit) {
+            pid_t pid = fork();  // Create a new process.
+            if (pid < 0) {
+                // Fork failed: print error message and exit.
+                perror("fork");
+                exit(EXIT_FAILURE);
+            } else if (pid == 0) {
+                // Child process:
+                // Convert the iteration count to a string to pass as a command-line argument.
+                char iter_str[16];
+                snprintf(iter_str, sizeof(iter_str), "%d", iterations);
+                // Execute the user process executable "./user" with the iteration parameter.
+                execl("./user", "./user", iter_str, (char *)NULL);
+                // If execl returns, an error occurred; print error and exit child.
+                perror("execl");
+                exit(EXIT_FAILURE);
+                
+                
