@@ -1,6 +1,21 @@
-
-
 # Multi-Process Project (aqrabawi.1)
+
+## Simplified Instructions
+
+1. **Download or git clone and extract the project**
+2. **Navigate to project directory** 
+     ```bash
+   cd aqrabawi.1
+   ```
+3. **Run**  ```bash
+        make clean
+        ```
+4. **Run ** ```bash
+        make
+        ```
+5. **Run** ```bash
+        ./oss -n 5 -s 3 -t 7
+        ```
 
 ## Compilation Instructions
 
@@ -40,7 +55,7 @@ make clean
 ```
 
 ## Description
-This project  helps with becoming familiar with the Linux environment, process management, and the steps involved in compilation and linking. The project consists of two executables:
+This project helps with becoming familiar with the Linux environment, process management, and the steps involved in compilation and linking. The project consists of two executables:
 
 - **oss**: The parent process that launches multiple child (user) processes based on specified command-line parameters.
 - **user**: The child process that performs a loop, printing its process ID (PID), its parent’s PID (PPID), and the current iteration number, with a one-second pause between iterations.
