@@ -1,71 +1,105 @@
+```markdown
 # Multi-Process Project (aqrabawi.1)
 
-## Simplified Instructions
+---
 
-1. **Download or git clone and extract the project**
-2. **Navigate to project directory** 
-     ```bash
-   cd aqrabawi.1
+## Overview
+
+This project is a warm-up assignment designed to help you become familiar with the Linux environment, process management, and the compilation/linking process. It consists of two executables:
+
+- **oss**: The parent process that launches multiple child (user) processes based on specified command-line parameters.
+- **user**: The child process that runs a loop, printing its process ID (PID), its parent’s PID (PPID), and the current iteration number, with a one-second pause between iterations.
+
+> **Note:** The `user` executable is typically invoked by `oss` and is only run directly for testing purposes.
+
+---
+
+## Quick Start
+
+1. **Download or Clone the Project**
+
+   Clone the repository using:
+   ```bash
+   git clone https://github.com/Jadaqrabawi/aqrabawi.1.git
    ```
-3. **Run**  ```bash
-        make clean
-        ```
-4. **Run ** ```bash
-        make
-        ```
-5. **Run** ```bash
-        ./oss -n 5 -s 3 -t 7
-        ```
+   Or download and extract the project archive.
 
-## Compilation Instructions
-
-1. **Open a Terminal and Navigate to the Project Directory:**
+2. **Navigate to the Project Directory**
    ```bash
    cd aqrabawi.1
    ```
 
-2. **Compile the Project:**
-   Run the following command to compile both executables using the provided Makefile:
+3. **Clean the Project (Optional)**
+   ```bash
+   make clean
+   ```
+
+4. **Compile the Project**
    ```bash
    make
    ```
 
-   This command will build the `oss` and `user` executables.
+5. **Run the Project**
+   ```bash
+   ./oss -n 5 -s 3 -t 7
+   ```
 
-## Running the Project
+---
 
-### Testing the `user` Executable Directly
-To run the `user` executable (for testing purposes), use:
+## Detailed Instructions
+
+### Compilation
+
+1. **Open a Terminal**  
+   Navigate to your project directory:
+   ```bash
+   cd aqrabawi.1
+   ```
+
+2. **Compile the Project**  
+   Run the following command to compile both the `oss` and `user` executables using the provided Makefile:
+   ```bash
+   make
+   ```
+
+### Running the Project
+
+#### Testing the `user` Executable Directly
+
+For testing purposes, you can run the `user` executable directly:
 ```bash
 ./user 5
 ```
-This command will execute the `user` process with 5 iterations.
+This will execute the `user` process with 5 iterations.
 
-### Running the `oss` Executable
-The `oss` executable is designed to launch the `user` process with specific parameters.
-run:
+#### Running the `oss` Executable
+
+The `oss` executable launches the `user` process with specified command-line options. For example, to launch 5 user processes with a maximum of 3 processes running simultaneously and 7 iterations per process:
 ```bash
 ./oss -n 5 -s 3 -t 7
 ```
 
-## Cleaning Up
+### Cleaning Up
+
 To remove all compiled object files and executables, run:
 ```bash
 make clean
 ```
 
-## Description
-This project helps with becoming familiar with the Linux environment, process management, and the steps involved in compilation and linking. The project consists of two executables:
-
-- **oss**: The parent process that launches multiple child (user) processes based on specified command-line parameters.
-- **user**: The child process that performs a loop, printing its process ID (PID), its parent’s PID (PPID), and the current iteration number, with a one-second pause between iterations.
-
-*Note:* The `user` executable is invoked by `oss` and is only run directly for testing purposes.
+---
 
 ## Additional Information
 
-- **Version Control:**  
+- **Version Control**  
+  This project is managed using Git. To access the repository:
+  ```bash
+  git clone https://github.com/Jadaqrabawi/aqrabawi.1.git
+  ```
 
-You can access the project on github repository:
+- **Project Purpose**  
+  This project serves as an introduction to process management in Linux. It demonstrates the use of system calls such as `fork()`, `exec()`, and `wait()`, and reinforces the steps involved in compiling and linking programs using a Makefile.
 
-git clone https://github.com/Jadaqrabawi/aqrabawi.1.git
+- **Usage Note**  
+  The `user` executable is designed to be invoked by `oss`. Running `user` directly is recommended only for testing and debugging.
+
+---
