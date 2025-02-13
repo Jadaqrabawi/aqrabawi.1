@@ -1,3 +1,9 @@
+// user.c
+// Author: aqrabwi, 13/02/2025
+// Description: Performs a loop for a given number of iterations.
+//              In each iteration, prints its PID, its parent's PID, and the iteration number,
+//              then sleeps for one second before printing again.
+
 #include <stdio.h>   // Standard I/O functions (printf, fprintf)
 #include <stdlib.h>  // Standard library functions (atoi, exit)
 #include <unistd.h>  // POSIX functions (sleep, getpid, getppid)
