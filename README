@@ -1,0 +1,56 @@
+
+
+# Multi-Process Project (aqrabawi.1)
+
+## Compilation Instructions
+
+1. **Open a Terminal and Navigate to the Project Directory:**
+   ```bash
+   cd aqrabawi.1
+   ```
+
+2. **Compile the Project:**
+   Run the following command to compile both executables using the provided Makefile:
+   ```bash
+   make
+   ```
+
+   This command will build the `oss` and `user` executables.
+
+## Running the Project
+
+### Testing the `user` Executable Directly
+To run the `user` executable (for testing purposes), use:
+```bash
+./user 5
+```
+This command will execute the `user` process with 5 iterations.
+
+### Running the `oss` Executable
+The `oss` executable is designed to launch the `user` process with specific parameters.
+run:
+```bash
+./oss -n 5 -s 3 -t 7
+```
+
+## Cleaning Up
+To remove all compiled object files and executables, run:
+```bash
+make clean
+```
+
+## Description
+This project  helps with becoming familiar with the Linux environment, process management, and the steps involved in compilation and linking. The project consists of two executables:
+
+- **oss**: The parent process that launches multiple child (user) processes based on specified command-line parameters.
+- **user**: The child process that performs a loop, printing its process ID (PID), its parent’s PID (PPID), and the current iteration number, with a one-second pause between iterations.
+
+*Note:* The `user` executable is invoked by `oss` and is only run directly for testing purposes.
+
+## Additional Information
+
+- **Version Control:**  
+
+You can access the project on github repository:
+
+git clone https://github.com/Jadaqrabawi/aqrabawi.1.git
