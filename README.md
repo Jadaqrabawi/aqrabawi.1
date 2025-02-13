@@ -1,16 +1,5 @@
-```markdown
+
 # Multi-Process Project (aqrabawi.1)
-
----
-
-## Overview
-
-This project is a warm-up assignment designed to help you become familiar with the Linux environment, process management, and the compilation/linking process. It consists of two executables:
-
-- **oss**: The parent process that launches multiple child (user) processes based on specified command-line parameters.
-- **user**: The child process that runs a loop, printing its process ID (PID), its parent’s PID (PPID), and the current iteration number, with a one-second pause between iterations.
-
-> **Note:** The `user` executable is typically invoked by `oss` and is only run directly for testing purposes.
 
 ---
 
@@ -43,6 +32,17 @@ This project is a warm-up assignment designed to help you become familiar with t
    ```bash
    ./oss -n 5 -s 3 -t 7
    ```
+
+---
+
+## Overview
+
+This project assignment helps to become familiar with the Linux environment, process management, and the compilation/linking process. It consists of two executables:
+
+- **oss**: The parent process that launches multiple child (user) processes based on specified command-line parameters.
+- **user**: The child process that runs a loop, printing its process ID (PID), its parent’s PID (PPID), and the current iteration number, with a one-second pause between iterations.
+
+> **Note:** The `user` executable is typically invoked by `oss` and is only run directly for testing purposes.
 
 ---
 
