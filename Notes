@@ -1,0 +1,29 @@
+jadaqrabawi7@gmail.com
+Dublin1200#
+
+git config --global user.name "jadaqrabawi"
+git config --global user.email "jadaqrabawi7@gmail.com"
+
+git add .
+git init
+
+git status
+
+git commit -m "First commit"
+
+git push origin main
+
+/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/https:www.github.com/jadaqrabawi
+
+
+Jmagm4@umsytem.edu
+
+delmar.umsl.edu
+
+Jmagm4
+Haneen2003
+
+ssh aqrabawi@opsys.cs.umsl.edu
+
+18252517
+aqrabawi
