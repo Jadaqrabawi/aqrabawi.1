@@ -23,7 +23,49 @@ delmar.umsl.edu
 Jmagm4
 Haneen2003
 
+
 ssh aqrabawi@opsys.cs.umsl.edu
 
 18252517
 aqrabawi
+
+mkdir aqrabawi.1
+cd aqrabawi.1
+
+cat > oss.c << 'EOF'
+
+
+cat > user.c << 'EOF'
+
+
+cat > Makefile << 'EOF'
+
+
+directory called aqrabawi.1
+
+make
+
+./oss 
+
+./user 5
+
+./oss -n 5 -s 3 -t 7
+
+
+chmod 700 aqrabawi.1
+
+cp -p -r aqrabawi.1 /kali/kali
+
+make clean
+
+Submission
+
+1. Source files *(c,noted)
+2. README
+3. Makefile
+4. .git subdirectory
+5. Results (screenshoot)
+
+README file should consist:
+1. A description of how to compile and run your project
+2. Other important information
